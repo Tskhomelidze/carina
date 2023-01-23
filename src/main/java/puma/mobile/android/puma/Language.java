@@ -56,6 +56,12 @@ public class Language extends PumaPageBase{
 
     @Override
     public boolean isPageOpened() {
-        return menuBar.isElementPresent();
+//        return menuBar.isElementPresent();
+        return false;
+    }
+
+    @Override
+    public void closePopUps() {
+
     }
 }

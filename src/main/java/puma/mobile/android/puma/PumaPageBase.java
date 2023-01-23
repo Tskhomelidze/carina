@@ -10,46 +10,24 @@ import java.util.List;
 
 public abstract class PumaPageBase extends AbstractPage implements IMobileUtils {
 
-    @FindBy(id = "branch-banner-iframe")
-    ExtendedWebElement topBar;
-    @FindBy(id = "branch-banner-close1")
-    ExtendedWebElement closeMobileAppBtn;
-
     @FindBy(xpath = "//button[@data-test-id='stay-on-region-button']")
-    ExtendedWebElement stayOnUsBtn;
-
-    @FindBy(xpath = "//span[@data-test-id='main-nav-menu-icon']")
-    ExtendedWebElement menuBar;
+    protected ExtendedWebElement stayOnUsBtn;
 
     @FindBy(xpath = "//button[@data-test-id='cookie-banner-close-btn']")
-    ExtendedWebElement closeCookiesBtn;
+    protected ExtendedWebElement closeCookiesBtn;
 
     @FindBy(xpath = "//button[@data-test-id='newsletter-sign-up-form-button']/div")
-    ExtendedWebElement closeSaleBtn;
+    protected ExtendedWebElement closeSaleBtn;
 
     @FindBy(xpath = "//ul[@id='product-list-items']/li")
-    List<ExtendedWebElement> productList;
+    protected List<ExtendedWebElement> productList;
 
     public PumaPageBase(WebDriver driver) {
         super(driver);
     }
 
-    public void clickCloseMobileAppBtn(){
-        super.driver.switchTo().frame(topBar.getElement());
-        closeMobileAppBtn.click();
-        super.driver.switchTo().defaultContent();
-    }
-
-    public void clickMenuBar(){
-        menuBar.click();
-    }
-
     public void clickStayOnUsBtn(){
         stayOnUsBtn.click();
-    }
-
-    public void refreshPage(){
-        refresh(0);
     }
 
     public void clickCloseCookiesBtn(){
@@ -61,4 +39,6 @@ public abstract class PumaPageBase extends AbstractPage implements IMobileUtils 
     }
 
     public abstract boolean isPageOpened();
+
+    public abstract void closePopUps();
 }

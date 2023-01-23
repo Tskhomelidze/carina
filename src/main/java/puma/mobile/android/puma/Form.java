@@ -67,4 +67,9 @@ public class Form extends PumaPageBase {
         return addToCartBtn.isElementPresent();
     }
 
+    @Override
+    public void closePopUps() {
+
+    }
+
 }

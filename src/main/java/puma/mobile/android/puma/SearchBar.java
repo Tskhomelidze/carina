@@ -8,8 +8,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = PumaPageBase.class)
 public class SearchBar extends PumaPageBase {
 
@@ -20,8 +18,8 @@ public class SearchBar extends PumaPageBase {
     @FindBy(xpath = "//input[@data-test-id='search-box-mobile']")
     ExtendedWebElement searchBar;
 
-    @FindBy(xpath = "//li[@data-test-id='product-list-item']")
-    List<ExtendedWebElement> productsList;
+//    @FindBy(xpath = "//li[@data-test-id='product-list-item']")
+//    List<ExtendedWebElement> productsList;
 
     public SearchBar(WebDriver driver) {
         super(driver);
@@ -37,14 +35,19 @@ public class SearchBar extends PumaPageBase {
     }
 
     public void printAllItemInfo() {
-        LOGGER.info("Elements size = " + productsList.size());
-        for (ExtendedWebElement product : productsList) {
+        LOGGER.info("Elements size = " + productList.size());
+        for (ExtendedWebElement product : productList) {
             LOGGER.info(product.getText());
         }
     }
 
     @Override
     public boolean isPageOpened() {
-        return menuBar.isElementPresent();
+        return !productList.isEmpty();
+    }
+
+    @Override
+    public void closePopUps() {
+
     }
 }

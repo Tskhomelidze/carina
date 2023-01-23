@@ -1,4 +1,4 @@
-package puma.mobile.android.puma;
+package puma.mobile.ios;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.utils.factory.DeviceType;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import puma.base.CartBase;
 
-@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = CartBase.class)
+@DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = CartBase.class)
 public class Cart extends CartBase {
     private static final Logger LOGGER = LogManager.getLogger(Cart.class);
 

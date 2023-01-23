@@ -47,4 +47,9 @@ public class Hover extends PumaPageBase{
     public boolean isPageOpened() {
         return !productList.isEmpty();
     }
+
+    @Override
+    public void closePopUps() {
+        clickStayOnUsBtn();
+    }
 }
