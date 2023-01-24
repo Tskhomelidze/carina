@@ -1,15 +1,12 @@
-package puma.mobile.android.puma;
+package puma.base;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = PumaPageBase.class)
-public class Form extends PumaPageBase {
-
+public abstract class FormBase extends PumaPageBase {
     @FindBy(xpath = "//ul[@aria-labelledby='footer-support-nav-title']//a[text()='Purchase a Digital Gift Card']")
-    ExtendedWebElement digitalGiftBtn;
+    private ExtendedWebElement digitalGiftBtn;
 
     @FindBy(xpath = "//select/option[@value='50']")
     ExtendedWebElement selectValue;
@@ -29,47 +26,50 @@ public class Form extends PumaPageBase {
     @FindBy(xpath = "//button[@data-test-id='gift-card-add-to-cart']")
     ExtendedWebElement addToCartBtn;
 
-    public Form(WebDriver driver) {
+    public FormBase(WebDriver driver) {
         super(driver);
     }
 
     public void clickDigitalGiftBtn(){
+        digitalGiftBtn.scrollTo();
         digitalGiftBtn.click();
     }
 
+    
     public void clickSelectValue(){
         selectValue.click();
     }
 
+    
     public void typeRecipientName(String name){
         recipientName.type(name);
     }
 
+    
     public void typeYourName(String name){
         yourName.type(name);
     }
 
+    
     public void typeRecipientEmail(String email){
         recipientEmail.type(email);
         confirmEmail.type(email);
     }
 
+    
     public void typeGiftMessage(String message){
         giftMessage.type(message);
     }
 
+    
     public void clickAddToCartBtn(){
         addToCartBtn.click();
     }
 
-    @Override
+    
     public boolean isPageOpened() {
         return addToCartBtn.isElementPresent();
     }
 
-    @Override
-    public void closePopUps() {
-
-    }
-
+    public abstract void closePopUps();
 }

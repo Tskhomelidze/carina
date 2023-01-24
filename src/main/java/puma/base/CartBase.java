@@ -3,7 +3,6 @@ package puma.base;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import puma.mobile.android.puma.PumaPageBase;
 
 import java.util.List;
 

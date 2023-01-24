@@ -1,34 +1,34 @@
-package puma.mobile.android.puma;
+package puma.base;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = PumaPageBase.class)
-public class Language extends PumaPageBase{
+public abstract class LanguageBase extends PumaPageBase{
 
     @FindBy(xpath = "//li[@class='py-2']")
-    ExtendedWebElement languageBtn;
+    private ExtendedWebElement languageBtn;
 
     @FindBy(xpath = "//a[@hreflang='es-es']")
-    ExtendedWebElement spanishLanguageBtn;
+    private ExtendedWebElement spanishLanguageBtn;
 
     @FindBy(id = "onetrust-accept-btn-handler")
-    ExtendedWebElement acceptCookiesBtn;
+    private ExtendedWebElement acceptCookiesBtn;
 
     @FindBy(xpath = "//a[@data-js-change-locale]")
-    ExtendedWebElement languageBtnOnSpanishPage;
+    private ExtendedWebElement languageBtnOnSpanishPage;
 
     @FindBy(xpath = "//input[@id='locale-search-input']")
-    ExtendedWebElement languageSearchBar;
+    private ExtendedWebElement languageSearchBar;
 
     @FindBy(xpath = "//a[@data-locale='en_US']")
     ExtendedWebElement englishLangBtn;
 
-    public Language(WebDriver driver) {
+    public LanguageBase(WebDriver driver) {
         super(driver);
     }
+
+    public abstract void clickMenuBar();
 
     public void clickLanguageBtn(){
         languageBtn.click();
@@ -54,14 +54,4 @@ public class Language extends PumaPageBase{
         englishLangBtn.click();
     }
 
-    @Override
-    public boolean isPageOpened() {
-//        return menuBar.isElementPresent();
-        return false;
-    }
-
-    @Override
-    public void closePopUps() {
-
-    }
 }

@@ -1,4 +1,4 @@
-package puma.mobile.android.puma;
+package puma.base;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public abstract class PumaPageBase extends AbstractPage implements IMobileUtils {
+public abstract class PumaPageBase extends AbstractPage {
 
     @FindBy(xpath = "//button[@data-test-id='stay-on-region-button']")
     protected ExtendedWebElement stayOnUsBtn;
