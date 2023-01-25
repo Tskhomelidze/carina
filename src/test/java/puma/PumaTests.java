@@ -18,7 +18,7 @@ public class PumaTests implements IAbstractTest,IMobileUtils {
         cart.selectProduct();
         cart.selectSize();
         cart.clickAddToCart();
-        Assert.assertTrue(cart.isPageOpened(), "Error, Page is not opened");
+        Assert.assertTrue(cart.isPageOpened(), "Error, page is not opened");
     }
 
     @Test
@@ -45,7 +45,7 @@ public class PumaTests implements IAbstractTest,IMobileUtils {
         hover.clickShopAllTrainingBtn();
         hover.refresh(1);
         hover.printAllProducts();
-        Assert.assertTrue(hover.isPageOpened(),"Error, page is not opened");
+        Assert.assertTrue(hover.isPageOpened(),"Error, Product list is empty");
     }
 
     @Test
@@ -71,7 +71,7 @@ public class PumaTests implements IAbstractTest,IMobileUtils {
         searchBar.search("TRAINING");
         searchBar.refresh(1);
         searchBar.printAllItemInfo();
-        Assert.assertTrue(searchBar.isPageOpened(),"Error, page is not opened");
+        Assert.assertTrue(searchBar.isPageOpened(),"Error, Product list is empty");
     }
 
 }

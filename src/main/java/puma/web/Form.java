@@ -12,11 +12,4 @@ public class Form extends FormBase {
     public Form(WebDriver driver) {
         super(driver);
     }
-
-    @Override
-    public void closePopUps(){
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
-    }
 }

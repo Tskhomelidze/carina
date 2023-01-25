@@ -45,11 +45,6 @@ public class SearchBar extends SearchBarBase {
         }
     }
 
-    @Override
-    public boolean isPageOpened() {
-        return searchIcon.isElementPresent();
-    }
-
     public void clickCloseMobileAppBtn(){
         super.driver.switchTo().frame(topBar.getElement());
         closeMobileAppBtn.click();
@@ -59,8 +54,6 @@ public class SearchBar extends SearchBarBase {
     @Override
     public void closePopUps(){
         clickCloseMobileAppBtn();
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
+        super.closePopUps();
     }
 }

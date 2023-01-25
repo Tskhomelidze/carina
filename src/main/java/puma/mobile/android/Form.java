@@ -28,8 +28,6 @@ public class Form extends FormBase {
     @Override
     public void closePopUps(){
         clickCloseMobileAppBtn();
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
+        super.closePopUps();
     }
 }

@@ -26,11 +26,4 @@ public class Language extends LanguageBase {
     public boolean isPageOpened() {
         return menuBar.isElementPresent();
     }
-
-    @Override
-    public void closePopUps(){
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
-    }
 }

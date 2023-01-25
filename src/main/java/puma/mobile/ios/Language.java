@@ -41,8 +41,6 @@ public class Language extends LanguageBase {
     @Override
     public void closePopUps(){
         clickCloseMobileAppBtn();
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
+        super.closePopUps();
     }
 }

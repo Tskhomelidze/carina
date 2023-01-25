@@ -7,7 +7,11 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import puma.base.SearchBarBase;
+
+import java.time.Duration;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = SearchBarBase.class)
 public class SearchBar extends SearchBarBase {
@@ -45,11 +49,6 @@ public class SearchBar extends SearchBarBase {
         }
     }
 
-    @Override
-    public boolean isPageOpened() {
-        return searchIcon.isElementPresent();
-    }
-
     public void clickCloseMobileAppBtn(){
         super.driver.switchTo().frame(topBar.getElement());
         closeMobileAppBtn.click();
@@ -59,8 +58,6 @@ public class SearchBar extends SearchBarBase {
     @Override
     public void closePopUps(){
         clickCloseMobileAppBtn();
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
+        super.closePopUps();
     }
 }

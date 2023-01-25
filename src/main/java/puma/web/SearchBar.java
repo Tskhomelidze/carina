@@ -33,16 +33,4 @@ public class SearchBar extends SearchBarBase {
             LOGGER.info(product.getText());
         }
     }
-
-    @Override
-    public boolean isPageOpened() {
-        return searchIcon.isElementPresent();
-    }
-
-    @Override
-    public void closePopUps(){
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
-    }
 }

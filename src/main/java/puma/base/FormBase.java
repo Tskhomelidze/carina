@@ -37,6 +37,7 @@ public abstract class FormBase extends PumaPageBase {
 
     
     public void clickSelectValue(){
+        selectValue.scrollTo();
         selectValue.click();
     }
 
@@ -66,10 +67,16 @@ public abstract class FormBase extends PumaPageBase {
         addToCartBtn.click();
     }
 
-    
+
+    @Override
     public boolean isPageOpened() {
         return addToCartBtn.isElementPresent();
     }
 
-    public abstract void closePopUps();
+    @Override
+    public void closePopUps(){
+        clickStayOnUsBtn();
+        clickCloseCookiesBtn();
+        clickCloseSaleBtn();
+    }
 }

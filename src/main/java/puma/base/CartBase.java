@@ -38,6 +38,11 @@ public abstract class CartBase extends PumaPageBase {
         addToCartBtn.click();
     }
 
+    @Override
+    public boolean isPageOpened() {
+        return addToCartBtn.isElementPresent();
+    }
+
     public abstract void clickMenBtn();
 
     public abstract void selectProduct();

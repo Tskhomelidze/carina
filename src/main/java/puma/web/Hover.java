@@ -32,17 +32,10 @@ public class Hover extends HoverBase {
     }
 
     @Override
-    public void printAllProducts(){
-        LOGGER.info("Products size = "+productList.size());
-        for(ExtendedWebElement product : productList){
+    public void printAllProducts() {
+        LOGGER.info("Products size = " + productList.size());
+        for (ExtendedWebElement product : productList) {
             LOGGER.info(product.getText());
         }
-    }
-
-    @Override
-    public void closePopUps(){
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
     }
 }

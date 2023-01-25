@@ -22,4 +22,11 @@ public abstract class HoverBase extends PumaPageBase {
 
     public abstract void printAllProducts();
 
+    @Override
+    public void closePopUps(){
+        clickStayOnUsBtn();
+        clickCloseCookiesBtn();
+        clickCloseSaleBtn();
+    }
+
 }

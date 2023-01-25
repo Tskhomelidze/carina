@@ -20,12 +20,6 @@ public class Cart extends CartBase {
         super(driver);
     }
 
-
-    @Override
-    public boolean isPageOpened() {
-        return addToCartBtn.isElementPresent();
-    }
-
     public void clickMenBtn(){
         menBtn.hover();
     }

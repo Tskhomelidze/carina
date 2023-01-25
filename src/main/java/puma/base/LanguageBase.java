@@ -54,4 +54,10 @@ public abstract class LanguageBase extends PumaPageBase{
         englishLangBtn.click();
     }
 
+    @Override
+    public void closePopUps(){
+        clickStayOnUsBtn();
+        clickCloseCookiesBtn();
+        clickCloseSaleBtn();
+    }
 }

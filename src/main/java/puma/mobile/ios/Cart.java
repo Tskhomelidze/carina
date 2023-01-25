@@ -33,11 +33,6 @@ public class Cart extends CartBase {
         productList.get(0).click();
     }
 
-    @Override
-    public boolean isPageOpened(){
-        return addToCartBtn.isElementPresent();
-    }
-
     public void clickCloseMobileAppBtn(){
         super.driver.switchTo().frame(topBar.getElement());
         closeMobileAppBtn.click();

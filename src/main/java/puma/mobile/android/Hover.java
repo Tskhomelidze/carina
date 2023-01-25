@@ -71,8 +71,6 @@ public class Hover extends HoverBase {
     @Override
     public void closePopUps(){
         clickCloseMobileAppBtn();
-        clickStayOnUsBtn();
-        clickCloseCookiesBtn();
-        clickCloseSaleBtn();
+        super.closePopUps();
     }
 }

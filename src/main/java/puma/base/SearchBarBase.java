@@ -15,4 +15,16 @@ public abstract class SearchBarBase extends PumaPageBase{
 
     public abstract void printAllItemInfo();
 
+    @Override
+    public boolean isPageOpened() {
+        return !productList.isEmpty();
+    }
+
+    @Override
+    public void closePopUps(){
+        clickStayOnUsBtn();
+        clickCloseCookiesBtn();
+        clickCloseSaleBtn();
+    }
+
 }
