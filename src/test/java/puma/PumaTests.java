@@ -1,6 +1,7 @@
 package puma;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
+import com.qaprosoft.carina.core.gui.AbstractUIObject;
 import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
