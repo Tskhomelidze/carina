@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import puma.Product;
 import puma.base.SearchBarBase;
 
 import java.time.Duration;
@@ -44,8 +45,8 @@ public class SearchBar extends SearchBarBase {
 
     public void printAllItemInfo() {
         LOGGER.info("Elements size = " + productList.size());
-        for (ExtendedWebElement product : productList) {
-            LOGGER.info(product.getText());
+        for (Product product : productList) {
+            LOGGER.info(product.getName());
         }
     }
 

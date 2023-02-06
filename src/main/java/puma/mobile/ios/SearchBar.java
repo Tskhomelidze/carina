@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import puma.Product;
 import puma.base.SearchBarBase;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = SearchBarBase.class)
@@ -40,8 +41,8 @@ public class SearchBar extends SearchBarBase {
 
     public void printAllItemInfo() {
         LOGGER.info("Elements size = " + productList.size());
-        for (ExtendedWebElement product : productList) {
-            LOGGER.info(product.getText());
+        for (Product product : productList) {
+            LOGGER.info(product.getName());
         }
     }
 

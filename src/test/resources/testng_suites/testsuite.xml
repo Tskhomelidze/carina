@@ -1,9 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite verbose="1" name="Carina Demo Tests - Puma web test" parallel="methods">
+<suite verbose="1" name="Carina Demo Tests - Puma" parallel="methods">
 	<test name="Puma test">
 		<classes>
 			<class name="puma.PumaTests"/>
 		</classes>
 	</test>
-
 </suite>

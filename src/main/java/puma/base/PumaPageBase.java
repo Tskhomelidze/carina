@@ -2,9 +2,9 @@ package puma.base;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import puma.Product;
 
 import java.util.List;
 
@@ -20,22 +20,22 @@ public abstract class PumaPageBase extends AbstractPage {
     protected ExtendedWebElement closeSaleBtn;
 
     @FindBy(xpath = "//ul[@id='product-list-items']/li")
-    protected List<ExtendedWebElement> productList;
+    protected List<Product> productList;
 
     public PumaPageBase(WebDriver driver) {
         super(driver);
     }
 
     public void clickStayOnUsBtn(){
-        stayOnUsBtn.click();
+        stayOnUsBtn.clickIfPresent();
     }
 
     public void clickCloseCookiesBtn(){
-        closeCookiesBtn.click();
+        closeCookiesBtn.clickIfPresent();
     }
 
     public void clickCloseSaleBtn(){
-        closeSaleBtn.click();
+        closeSaleBtn.clickIfPresent();
     }
 
     public abstract boolean isPageOpened();

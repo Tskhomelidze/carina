@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import puma.Product;
 import puma.base.HoverBase;
 
 
@@ -56,8 +57,8 @@ public class Hover extends HoverBase {
     @Override
     public void printAllProducts(){
         LOGGER.info("Products size = "+productList.size());
-        for(ExtendedWebElement product : productList){
-            LOGGER.info(product.getText());
+        for(Product product : productList){
+            LOGGER.info(product.getName());
         }
     }
 
