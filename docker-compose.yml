@@ -17,13 +17,14 @@ services:
 
   selenoid-ui:
     container_name: selenoid-ui
-    image: aerokube/selenoid-ui:latest
+    image: aerokube/selenoid-ui
     platform: linux/amd64
     network_mode: bridge
     links:
       - selenoid
+    hostname: "selenoid.example.com"
     ports:
-      - "8080:8080"
+      - "8090:8080"
     command: [ "--selenoid-uri", "http://selenoid:4444" ]
 
   video-recorder:
@@ -44,3 +45,8 @@ services:
   maven:
     container_name: java-maven
     build: .
+    volumes:
+      - './target/:/Carina-demo/target'
+      - './reports/:/Carina-demo/reports'
+    environment:
+      SUITE_NAME: testsuite
