@@ -13,6 +13,8 @@
 
 	<parameter name="jenkinsJobExecutionMode" value="continue"/>
 
+	<parameter name="jenkinsRegressionMatrix" value="env: DEMO, branch: master; env:PROD, branch: prod"/>
+
 	<test name="User API tests">
 		<classes>
 			<class name="com.qaprosoft.carina.demo.APISampleTest" />
