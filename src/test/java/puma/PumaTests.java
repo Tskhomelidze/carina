@@ -1,12 +1,24 @@
 package puma;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
+import com.zebrunner.agent.core.annotation.TestRailCaseId;
+import com.zebrunner.agent.core.registrar.TestRail;
 import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import puma.base.*;
 
 public class PumaTests implements IAbstractTest,IMobileUtils {
+
+    @BeforeSuite
+    public void setUp() {
+        TestRail.setSuiteId("S187");
+        TestRail.setRunName("Puma web tests.");
+        TestRail.setAssignee("Luka");
+    }
+
+    @TestRailCaseId("C3531")
     @Test
     public void CartTest(){
         CartBase cart = initPage(getDriver(),CartBase.class);
@@ -21,6 +33,7 @@ public class PumaTests implements IAbstractTest,IMobileUtils {
         Assert.assertTrue(cart.isPageOpened(), "Error, page is not opened");
     }
 
+    @TestRailCaseId("C3532")
     @Test
     public void formTest(){
         FormBase form = initPage(getDriver(), FormBase.class);
@@ -36,6 +49,7 @@ public class PumaTests implements IAbstractTest,IMobileUtils {
         Assert.assertTrue(form.isPageOpened(),"Error, page is not opened");
     }
 
+    @TestRailCaseId("C3533")
     @Test
     public void hoverTest(){
         HoverBase hover = initPage(getDriver(), HoverBase.class);
@@ -48,6 +62,7 @@ public class PumaTests implements IAbstractTest,IMobileUtils {
         Assert.assertTrue(hover.isPageOpened(),"Error, Product list is empty");
     }
 
+    @TestRailCaseId("C3534")
     @Test
     public void languageTest() {
         LanguageBase language = initPage(getDriver(),LanguageBase.class);
@@ -63,6 +78,7 @@ public class PumaTests implements IAbstractTest,IMobileUtils {
         Assert.assertTrue(language.isPageOpened(),"Error, page is not opened");
     }
 
+    @TestRailCaseId("C3535")
     @Test
     public void searchTest(){
         SearchBarBase searchBar = initPage(getDriver(),SearchBarBase.class);
